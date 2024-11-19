@@ -1,0 +1,32 @@
+<!-- * les boîtes de dialogue permettent d'interagir avec l'utilisateur en affichant des messages ou en recueillant des informations. 
+confirm() : Boîte de confirmation
+La fonction confirm() affiche une boîte de dialogue avec un message et deux boutons : "OK" et "Annuler". 
+Elle permet de demander à l'utilisateur de confirmer ou d'annuler une action. 
+Elle retourne une valeur booléenne : true si l'utilisateur clique sur "OK", et false s'il clique sur "Annuler".
+let resultat = confirm("Êtes-vous sûr ?"); -->
+
+<!-- *************************Créer un fichier avec le code HTML de base avec un titre **************** -->
+<!-- 
+1) Demande de confirmation pour supprimer :
+    Utilise confirm() pour demander à l'utilisateur s'il souhaite supprimer un élément avec un message comme 
+    "Voulez-vous vraiment supprimer cet élément ?".
+
+2) Vérification de déconnexion :
+    Demande à l'utilisateur de confirmer avec confirm() s'il souhaite se déconnecter, avec un message comme "Êtes-vous sûr de vouloir vous déconnecter ?".
+  -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>confirm</title>
+  </head>
+  <body>
+    <h1>confirm</h1>
+    <script>
+      let confirmationSuppression = confirm(
+        "Voulez-vous vraiment supprimer cet élément ?"
+      );
+    </script>
+  </body>
+</html>

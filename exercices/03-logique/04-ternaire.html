@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ternaire</title>
+  </head>
+  <body>
+    <h1>ternaire</h1>
+    <script>
+      /*
+
+***************************** Opérateur Ternaire ****************************
+
+L’opérateur ternaire est une façon concise d'écrire une condition if...else en une seule ligne. 
+Il est utilisé pour retourner une valeur en fonction d'une condition, en simplifiant le code pour des cas simples.
+Syntaxe de l'Opérateur Ternaire :
+	condition ? valeur_si_vrai : valeur_si_faux;
+condition : Une expression qui sera évaluée (doit renvoyer true ou false).
+valeur_si_vrai : La valeur renvoyée si la condition est true.
+ valeur_si_faux : La valeur renvoyée si la condition est false.
+
+*/
+      /* 1)
+Demande à l'utilisateur de saisir son âge avec prompt.
+Utilise un opérateur ternaire pour affecter à une variable statut la valeur "Majeur" si l'âge est supérieur ou égal à 18, ou "Mineur" sinon.
+Affiche statut avec console.log.
+*/
+      // let age = Number(prompt("Entrez votre âge :"));
+      // let statut = (age >= 18) ? "Majeur" : "Mineur";
+      // console.log(statut); // Affiche "Majeur" ou "Mineur" en fonction de l'âge
+
+      /* 2)
+Demande à l'utilisateur de saisir un nombre avec prompt.
+Utilise un opérateur ternaire pour afficher "Le nombre est pair" si le nombre est pair, ou "Le nombre est impair" s’il est impair.
+
+*/
+      // let nombre = Number(prompt("Entrez un nombre :"));
+      // let parite = (nombre % 2 === 0) ? "Le nombre est pair" : "Le nombre est impair";
+      // console.log(parite); // Affiche "Le nombre est pair" ou "Le nombre est impair"
+
+      /* 3)
+Demande à l'utilisateur de saisir une température.
+Utilise un opérateur ternaire pour afficher "Il fait chaud" si la température est supérieure à 30, sinon "Il fait frais"      
+
+*/
+      let temperature = Number(prompt("Entrez la température :"));
+      let message = temperature > 30 ? "Il fait chaud" : "Il fait frais";
+      console.log(message); // Affiche "Il fait chaud" ou "Il fait frais"
+
+      /* 4)
+Demande à l'utilisateur de saisir un prix.
+Utilise un opérateur ternaire pour appliquer une remise de 20 % si le prix est supérieur ou égal à 100, sinon applique une remise de 10 %.
+Affiche le nouveau prix calculé
+*/
+      let prix = Number(prompt("Entrez le prix :"));
+      let prixAvecRemise = prix >= 100 ? prix * 0.8 : prix * 0.9;
+      console.log("Le prix avec remise est : " + prixAvecRemise.toFixed(2));
+
+      /* 5)
+Demande à l'utilisateur de saisir une note (entre 0 et 100).
+Utilise des opérateurs ternaires imbriqués pour évaluer la note :
+Si la note est supérieure ou égale à 90, affiche "Excellent".
+Si la note est supérieure ou égale à 75, affiche "Bien".
+Si la note est supérieure ou égale à 50, affiche "Passable".
+Sinon, affiche "Échec".
+*/
+      let note = Number(prompt("Entrez une note entre 0 et 100 :"));
+      let evaluation =
+        note >= 90
+          ? "Excellent"
+          : note >= 75
+          ? "Bien"
+          : note >= 50
+          ? "Passable"
+          : "Échec";
+      console.log(evaluation); // Affiche "Excellent", "Bien", "Passable" ou "Échec"
+
+      /*
+
+*/
+    </script>
+  </body>
+</html>

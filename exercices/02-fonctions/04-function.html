@@ -1,0 +1,72 @@
+<!-- /* 
+ une fonction est un bloc de code conçu pour effectuer une tâche spécifique. 
+Elle permet de regrouper des instructions, 
+de les réutiliser plusieurs fois et de rendre le code plus organisé et lisible.
+Fonction nommée : est levée (hoisted), ce qui signifie qu’elle peut être appelée même avant sa déclaration dans le code.
+saluer(); // Cela fonctionne car "saluer" est hoistée
+function saluer() {
+    console.log("Bonjour !");
+}
+
+
+Créez une fonction nommée afficherMessage qui affiche "Bienvenue dans notre programme!" dans la console à chaque fois qu'elle est appelée.
+*/
+
+/*
+*************************************************
+Les fonctions nommées avec paramètres en permettent de créer des fonctions avec un nom défini et d’accepter des valeurs d'entrée (appelées paramètres). 
+Ces paramètres rendent les fonctions flexibles, car ils permettent d’utiliser des valeurs dynamiques lorsque la fonction est appelée.
+function saluer(nom) {
+    console.log("Bonjour, " + nom + " !");
+}
+Quand tu appelles une fonction avec des paramètres, tu passes des arguments (les valeurs pour chaque paramètre) entre les parenthèses. 
+Ces arguments vont remplacer les paramètres dans le corps de la fonction.
+saluer("Alice"); // Affiche "Bonjour, Alice !"
+saluer("Bob");   // Affiche "Bonjour, Bob !"
+*************************************************
+
+Créez une fonction nommée multiplier qui prend deux paramètres et retourne le produit de ces deux nombres.
+*/
+
+/*
+Créez une fonction nommée concatener qui prend deux chaînes de caractères en paramètres 
+et retourne la concaténation des deux avec un espace entre elles.
+*/
+/*
+Créez une fonction nommée convertirEnMinutes qui prend un nombre d'heures en paramètre et retourne le nombre total de minutes. 
+(Par exemple, si on passe 2, elle retourne 120).
+*/
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>function</h1>
+    <script>
+      function afficherMessage() {
+        console.log("Bienvenue dans notre programme !");
+      }
+      afficherMessage();
+
+      function multiplier(a, b) {
+        console.log(a * b);
+      }
+      multiplier(3, 4);
+
+      function concatener(chaine1, chaine2) {
+        console.log(chaine1 + " " + chaine2);
+      }
+      concatener("Bonjour", "tout le monde");
+
+      function convertirEnMinutes(heures) {
+        console.log(heures * 60);
+      }
+      convertirEnMinutes(2);
+    </script>
+  </body>
+</html>

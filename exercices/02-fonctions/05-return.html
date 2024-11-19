@@ -1,0 +1,65 @@
+<!-- 
+ Le mot-clé return est utilisé dans les fonctions pour renvoyer une valeur à l’endroit où la fonction est appelée. Cela permet de récupérer le résultat de la fonction et de l’utiliser ailleurs dans le code. Lorsqu’une fonction atteint une instruction return, elle s'arrête immédiatement
+Une fonction peut exécuter plusieurs instructions, puis renvoyer une valeur avec return. Cette valeur peut ensuite être stockée dans une variable ou utilisée dans d'autres expressions.
+function avecReturn() {
+    return "je suis la valeur de retour";
+}
+let resultat = avecReturn();   // resultat "je suis la valeur de retour"
+
+-->
+<!-- 
+Exercice 1 : Retour simple
+
+Crée une fonction qui retourne une valeur fixe, par exemple "Bonjour". 
+Appelle cette fonction et affiche le résultat dans la console.
+(Objectif : Voir comment return renvoie une valeur simple.)
+
+
+Exercice 2 : Calcul et retour
+
+Crée une fonction qui prend deux nombres en paramètres, les additionne et retourne le résultat. 
+Utilise ensuite le résultat retourné pour faire une autre opération. 
+(Objectif : Pratiquer le retour d'une valeur calculée et son utilisation dans une expression.)
+
+Exercice 3 : Arrêt de la fonction avec return
+
+Crée une fonction qui affiche un texte, avant le return et place une autre instruction qui affiche un texte après return. 
+Appelle la fonction et observe l'exécution. (Objectif : Comprendre que return interrompt l'exécution de la fonction après son appel.)
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>avecReturn</title>
+  </head>
+  <body>
+    <h1>avecReturn</h1>
+    <script>
+      // /1
+      function premierReturn() {
+        return "bonjour";
+      }
+      console.log(premierReturn());
+      //   2
+      function additionner(a, b) {
+        return a + b; // Renvoie la somme de a et b
+      }
+
+      let resultat = additionner(5, 7); // Appelle la fonction avec 5 et 7, stocke le résultat
+      let resultatFinal = resultat + 10; // Utilise le résultat pour une autre opération
+      console.log(additionner(resultatFinal, 10)); // Affiche 22
+
+      //   3
+      function afficherTexte() {
+        console.log("Texte avant le return"); // Cette instruction s'exécute
+        return; // Arrête l'exécution de la fonction
+        console.log("Texte après le return"); // Cette instruction ne s'exécute pas
+      }
+
+      afficherTexte();
+    </script>
+  </body>
+</html>

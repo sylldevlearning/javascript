@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>switch</title>
+  </head>
+  <body>
+    <h1>switch</h1>
+
+    <script>
+      /*
+        Le mot-clé switch en JavaScript permet de comparer une expression à plusieurs valeurs possibles et d'exécuter un bloc de code en fonction de la valeur correspondante. 
+Il est souvent utilisé pour simplifier les conditions multiples avec if...else if...else.
+La structure switch teste la valeur d’une expression (ou d’une variable) et exécute le bloc de code correspondant au case qui correspond à cette valeur.
+switch (expression) {
+    case valeur1:
+        // Code exécuté si expression === valeur1
+        break;
+    case valeur2:
+        // Code exécuté si expression === valeur2
+        break;
+    ...
+    default:
+        // Code exécuté si aucune des valeurs précédentes ne correspond
+}
+*/
+      // *******************
+
+      /* 1)
+Demande à l'utilisateur de saisir un jour de la semaine avec prompt.
+Utilise un switch pour afficher un message différent pour chaque jour.
+Par exemple, "Lundi" pourrait afficher "Début de la semaine !", "Samedi" et "Dimanche" pourraient afficher "Bon week-end !", etc.
+*/
+      //   let jour = prompt("Entrez un jour de la semaine :").toLowerCase();
+
+      //   switch (jour) {
+      //     case "lundi":
+      //       console.log("ho non !");
+      //       break;
+      //     case "mardi":
+      //       console.log("bientot koh lanta");
+      //       break;
+      //     case "mercredi":
+      //       console.log("Milieu de la semaine !");
+      //       break;
+      //     case "jeudi":
+      //       console.log("Presque la fin courage !");
+      //       break;
+      //     case "vendredi":
+      //       console.log("Apéro time !");
+      //       break;
+      //     case "samedi":
+      //     case "dimanche":
+      //       console.log("Bon week-end !");
+      //       break;
+      //     default:
+      //       console.log("Jour non valide !");
+      //   }
+
+      /*
+Demande à l'utilisateur d'entrer un nombre entre 1 et 5 avec prompt.
+Utilise un switch pour afficher ce nombre en toutes lettres ("un", "deux", etc.).
+Si le nombre est en dehors de cette plage, utilise default pour afficher "Nombre hors limite".
+*/
+      //   let nombre = parseInt(prompt("Entrez un nombre entre 1 et 5 :"));
+
+      //   switch (nombre) {
+      //     case 1:
+      //       console.log("un");
+      //       break;
+      //     case 2:
+      //       console.log("deux");
+      //       break;
+      //     case 3:
+      //       console.log("trois");
+      //       break;
+      //     case 4:
+      //       console.log("quatre");
+      //       break;
+      //     case 5:
+      //       console.log("cinq");
+      //       break;
+      //     default:
+      //       console.log("Nombre hors limite");
+      //   }
+
+      /* 3)
+Demande à l’utilisateur de saisir un fruit ("pomme", "banane", "poire", "ananas", etc.).
+Utilise un switch pour afficher "Fruit à pépins" pour "pomme" et "poire", "Fruit tropical" pour "banane" et "ananas", etc.
+Regroupe les case pour les fruits de même catégorie, en utilisant le fall-through.
+*/
+      //   let fruit = prompt("Entrez un fruit :").toLowerCase();
+
+      //   switch (fruit) {
+      //     case "pomme":
+      //     case "poire":
+      //       console.log("Fruit à pépins");
+      //       break;
+      //     case "banane":
+      //     case "ananas":
+      //       console.log("Fruit tropical");
+      //       break;
+      //     case "orange":
+      //     case "citron":
+      //       console.log("Agrume");
+      //       break;
+      //     default:
+      //       console.log("Catégorie de fruit inconnue");
+      //   }
+
+      /* 4)
+Demande à l’utilisateur de saisir deux nombres et une opération (+, -, *, /).
+Utilise un switch pour exécuter l’opération saisie, puis affiche le résultat dans une alerte.
+Utilise default pour afficher un message si l’utilisateur entre une opération non prise en charge.
+*/
+      //   let nombre1 = parseFloat(prompt("Entrez le premier nombre :"));
+      //   let operation = prompt("Entrez une opération (+, -, *, /) :");
+      //   let nombre2 = parseFloat(prompt("Entrez le deuxième nombre :"));
+
+      //   switch (operation) {
+      //     case "+":
+      //       console.log("Résultat : " + (nombre1 + nombre2));
+      //       break;
+      //     case "-":
+      //       console.log("Résultat : " + (nombre1 - nombre2));
+      //       break;
+      //     case "*":
+      //       console.log("Résultat : " + nombre1 * nombre2);
+      //       break;
+      //     case "/":
+      //       if (nombre2 !== 0) {
+      //         console.log("Résultat : " + nombre1 / nombre2);
+      //       } else {
+      //         console.log("Erreur : division par zéro !");
+      //       }
+      //       break;
+      //     default:
+      //       console.log("Opération non reconnue");
+      //   }
+
+      /* 5)
+Demande à l’utilisateur de saisir une note (de "A" à "F").
+Utilise un switch pour afficher un message basé sur la note : "Excellent" pour "A", "Bien" pour "B", etc.
+Utilise default pour afficher "Note invalide" si la note est en dehors de la plage "A" à "F".
+
+*/
+      let note = prompt("Entrez votre note (A à F) :").toUpperCase();
+
+      switch (note) {
+        case "A":
+          console.log("Excellent");
+          break;
+        case "B":
+          console.log("Bien");
+          break;
+        case "C":
+          console.log("Assez bien");
+          break;
+        case "D":
+          console.log("Passable");
+          break;
+        case "E":
+          console.log("Insuffisant");
+          break;
+        case "F":
+          console.log("Échec");
+          break;
+        default:
+          console.log("Note invalide");
+      }
+
+      /*
+
+*/
+    </script>
+  </body>
+</html>
