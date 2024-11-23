@@ -1,0 +1,78 @@
+<!-- 
+  La méthode getElementById permet de sélectionner un élément par son identifiant.
+    HTML :
+        <p id="monParagraphe">Ceci est un paragraphe.</p>
+    JavaScript :	
+        const paragraphe = document.getElementById('monParagraphe');
+        console.log(paragraphe.textContent); // Résultat : "Ceci est un paragraphe."
+-->
+<!--1 sélectionne le div ayant l'id="conteneur". Affiche cet élément dans la console. -->
+<!--2 sélectionne tous les éléments ayant la classe boite et affiche-les dans la console. -->
+<!--3 Sélectionne tous les éléments <p> et affiche le nombre total de <p> présents. -->
+<!--4 sélectionne le premier <span> et affiche son contenu texte dans la console. -->
+<!--5 sélectionne tous les <li> et affiche leur contenu un par un dans la console. -->
+<!--6 Sélectionne le div class box  et modifie sa classe pour qu’il devienne "box active". 
+   Affiche l'élément modifié dans la console. -->
+<!--7 Supprime le paragraphe <p>Texte à supprimer</p> . -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sélectionner un élément par son id</title>
+  </head>
+  <body>
+    <h1>Sélectionner un élément par son id</h1>
+    <div id="conteneur">
+      <p>Bonjour !</p>
+    </div>
+    <div class="boite">Boîte 1</div>
+    <div class="boite">Boîte 2</div>
+    <div class="boite">Boîte 3</div>
+    <p>Paragraphe 1</p>
+    <p>Paragraphe 2</p>
+    <p>Paragraphe 3</p>
+    <div class="conteneur">
+      <span>Texte à sélectionner</span>
+    </div>
+    <ul>
+      <li>Élément 1</li>
+      <li>Élément 2</li>
+      <li>Élément 3</li>
+    </ul>
+    <div class="box inactive">Boîte inactive</div>
+    <div id="supprimer">
+      <p>Texte à supprimer</p>
+    </div>
+  </body>
+</html>
+<!-- /////////////////////////////////////////////////// -->
+<script>
+  // 1
+  const conteneur = document.getElementById("conteneur");
+  console.log(conteneur); // Résultat : <div id="conteneur">...</div>
+  // 2
+  const boites = document.getElementsByClassName("boite");
+  console.log(boites); // Résultat : HTMLCollection contenant les 3 divs
+  // 3
+  const paragraphes = document.getElementsByTagName("p");
+  console.log(paragraphes.length); // Résultat : 3
+  // 4
+  const span = document.querySelector(".conteneur span");
+  console.log(span.textContent); // Résultat : "Texte à sélectionner"
+  // 5
+  const items = document.querySelectorAll("ul li");
+  items.forEach((item) => console.log(item.textContent));
+  // Résultat :
+  // Élément 1
+  // Élément 2
+  // Élément 3
+  // 6
+  const box = document.querySelector(".box");
+  box.className = "box active";
+  console.log(box); // Résultat : <div class="box active">...</div>
+  // 7
+  const paragraphe = document.querySelector("#supprimer p");
+  paragraphe.remove();
+</script>
