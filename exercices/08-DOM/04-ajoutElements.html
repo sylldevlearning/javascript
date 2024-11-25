@@ -1,0 +1,57 @@
+<!-- 
+ Ajouter ou supprimer des éléments
+Ajouter un élément :
+La méthode document.createElement() permet de créer un nouvel élément HTML.
+Étapes pour ajouter un élément :
+1.	Créer l'élément avec createElement.
+2.	Définir son contenu ou ses attributs.
+3.	L'ajouter au DOM avec une méthode comme append
+Exemple :
+const liste = document.createElement('ul'); // crée dynamiquement un élément HTML <ul>
+const item = document.createElement('li');// crée dynamiquement un élément HTML <li>
+item.textContent = "Nouvel élément"; // définit le contenu textuel de l'élément <li>
+liste.append (item); // insère l’élément <li> (enfant) dans l’élément <ul> (parent).
+document.body.append (liste);// insère la liste <ul> (avec son <li> enfant) comme dernier élément de <body>
+
+Vous pouvez aussi utiliser la propriété innerHTML pour insérer directement du code HTML.
+    const conteneur = document.getElementById('conteneur');
+    conteneur.innerHTML = '<p>Ceci est un autre paragraphe.</p>';
+        innerHTML remplace tout le contenu existant de l’élément cible
+
+
+Supprimer un élément : 
+La méthode remove() permet de supprimer directement un élément.
+	const item = document.querySelector('li');
+item.remove(); // Supprime l'élément, Si plusieurs <li> existent, seul le premier sera ciblé. 
+ -->
+<!-- 1 Crée un élément <p> avec le texte "Bonjour, monde !" et ajoute-le dans un <div> existant. -->
+<!-- 2 Supprime un paragraphe <p> ayant l’id texte-a-supprimer -->
+<!-- 3 Change le texte d’un paragraphe <p> existant avec l’id texte-a-modifier -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ajout</title>
+  </head>
+  <body>
+    <div id="conteneur"></div>
+    <p id="texte-a-supprimer">Ce texte doit être supprimé.</p>
+    <div id="conteneur"></div>
+    <p id="texte-a-modifier">Ancien texte.</p>
+  </body>
+</html>
+<script>
+  // 1
+  const conteneur = document.getElementById("conteneur");
+  const paragraphe = document.createElement("p");
+  paragraphe.textContent = "Bonjour, monde !";
+  conteneur.append(paragraphe);
+  //   2
+  const texte = document.getElementById("texte-a-supprimer");
+  texte.remove();
+  //   3
+  const texteModifier = document.getElementById("texte-a-modifier");
+  texteModifier.textContent = "Nouveau texte.";
+</script>

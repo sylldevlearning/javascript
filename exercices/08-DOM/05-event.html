@@ -1,0 +1,59 @@
+<!--                les événements
+
+Les événements en JavaScript permettent de réagir aux interactions des utilisateurs ou aux changements qui se produisent dans la page. 
+Ces interactions incluent des clics, des saisies, des mouvements de la souris, ou des actions comme le chargement de la page.
+
+Qu'est-ce qu'un événement ?
+    Un événement est une action ou un déclencheur qui se produit dans le navigateur, comme :
+    •	L'utilisateur clique sur un bouton.
+    •	Une touche est enfoncée.
+    •	La souris passe sur un élément.
+    •	Une image est chargée.
+    
+Ajouter un gestionnaire d'événement
+    Un gestionnaire d'événement (ou event handler) est une fonction qui s'exécute lorsqu'un évé-nement est déclenché.
+
+Méthode 1 : Utiliser addEventListener
+    La méthode addEventListener est la manière recommandée pour gérer les événements.
+    Syntaxe : element.addEventListener('event', function);
+    Exemple :
+	    const bouton = document.getElementById('monBouton');
+        bouton.addEventListener('click', () => {
+    	console.log('Bouton cliqué !');
+        }); 
+Méthode 2 : Attribuer directement une fonction
+Vous pouvez également définir un gestionnaire directement sur une propriété comme onclick.
+    Exemple :
+        const bouton = document.getElementById('monBouton');
+        bouton.onclick = function () {
+            console.log('Bouton cliqué !');
+        }; 
+
+Types d'événements courants
+Voici quelques événements fréquents et leurs usages :
+Événement	Description	Exemple
+click	Se produit lors d'un clic sur un élément.	
+mouseover	La souris passe au-dessus d'un élément.	
+keydown / keyup	Une touche est enfoncée / relâchée.
+submit	Un formulaire est soumis.	
+load	La page ou un élément est complètement chargé.	
+
+5. L'objet event
+Lorsque vous gérez un événement, un objet event est automatiquement passé à votre fonction.
+ Cet objet contient des informations utiles sur l'événement, comme :
+    •	La cible (élément déclencheur) : event.target.
+    •	La position de la souris : event.clientX, event.clientY.
+    •	La touche appuyée : event.key.
+    Exemple :
+        document.addEventListener('click', (event) => {
+            console.log('Clic à la position :', event.clientX, event.clientY);
+        });
+
+Empêcher le comportement par défaut d’un événement
+La méthode preventDefault est utilisée pour empêcher le comportement par défaut associé à un événement.
+Cela peut être utile dans de nombreuses situations, comme lorsqu'on souhaite éviter le rechargement de la page lors de la soumission d'un formulaire, ou empêcher un lien de rediriger vers une autre page.
+    Syntaxe : event.preventDefault();
+		event : L'objet événement passé automatiquement à la fonction gestionnaire d'événement.
+        Cette méthode doit être appelée à l'intérieur du gestionnaire d'événement.
+
+-->

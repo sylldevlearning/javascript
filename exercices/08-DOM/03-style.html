@@ -1,0 +1,131 @@
+<!-- 
+  Modifier les styles
+Chaque élément HTML possède une propriété style qui permet de définir ses styles 
+    element.style.propriétéCSS = valeur;
+	propriétéCSS : La propriété CSS que vous souhaitez modifier (écrite en camelCase).
+	valeur : La valeur que vous attribuez à la propriété CSS.
+
+Exemple :
+    HTML :
+        <p id="monParagraphe">Ceci est un paragraphe.</p>
+    JavaScript :
+        const paragraphe = document.getElementById('monParagraphe');
+        paragraphe.style.color = 'red'; // Change la couleur du texte
+        paragraphe.style.fontSize = '20px'; // Change la taille du texte
+
+La modification directe des styles via style peut vite devenir complexe. 
+Une meilleure pratique consiste à utiliser des classes CSS, 
+puis à les ajouter ou les retirer en JavaScript.
+    •	classList.add() : Ajoute une classe.
+    •	classList.remove() : Retire une classe.
+    •	classList.toggle() : Ajoute la classe si elle n'existe pas, la retire sinon.
+    Exemple :
+        HTML :
+            <p id="texte" class="paragraphe">Paragraphe stylisé.</p>
+            <button id="bouton">Changer le style</button>
+        
+            CSS :
+            .paragraphe {
+                color: green;
+                font-weight: bold;
+            }
+            .nouveau-style {
+                background-color: yellow;
+                font-size: 25px;
+            }
+        
+        JavaScript :
+            const paragraphe = document.getElementById('texte');
+            const bouton = document.getElementById('bouton');
+            bouton.addEventListener('click', () => {
+                paragraphe.classList.toggle('nouveau-style');
+            });
+
+-->
+<!--1 Crée un élément <h1> et change la couleur de son texte en rouge   -->
+<!--2 Énoncé : Crée un élément <p> et augmente la taille de son texte à 24px. -->
+<!--3 Crée un élément <div> et applique la classe card définie dans un fichier CSS. 
+    .card {
+    background-color: lightblue;
+    padding: 20px;
+    border-radius: 5px;
+}
+-->
+<!-- 4 Crée un bouton <button> et supprime la classe btn-style qui lui est appliquée.
+    .btn-style {
+    background-color: green;
+    color: white;
+    font-size: 18px;
+}
+  -->
+<!-- 5 <ul id="listeFruits">
+      <li>Orange</li>
+      <li>Pomme</li>
+      <li>Banane</li>
+    </ul>
+    En JS, applique la couleur bleue à tous les éléments <li>.    
+    -->
+<!-- 5 Crée un <div> carré en html css et applique un fond gris en js. -->
+<!-- 6 Crée un paragraphe <p> avec une couleur définie en ligne, puis supprime cette couleur. -->
+<style>
+  /* 3 */
+  .card {
+    background-color: lightblue;
+    padding: 20px;
+    border-radius: 5px;
+    width: 25%;
+  }
+  /* 4 */
+  .btn-style {
+    background-color: green;
+    color: white;
+    font-size: 18px;
+  }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>style</title>
+  </head>
+  <body>
+    <h1 id="titrePrincipal">Titre à colorer</h1>
+    <p id="description">Description initiale</p>
+    <div id="bloc"></div>
+    <button id="action" class="btn-style">Clique ici</button>
+    <ul id="listeFruits">
+      <li>Orange</li>
+      <li>Pomme</li>
+      <li>Banane</li>
+    </ul>
+    <div id="conteneurCarre" style="width: 100px; height: 100px"></div>
+    <p id="texteInfo" style="color: purple">Texte en violet</p>
+  </body>
+</html>
+<script>
+  // 1
+  const titrePrincipal = document.getElementById("titrePrincipal");
+  titrePrincipal.style.color = "red";
+  //   2
+  const description = document.getElementById("description");
+  description.style.fontSize = "24px";
+  //   3
+  const bloc = document.getElementById("bloc");
+  bloc.classList.add("card");
+  //   4
+  const action = document.getElementById("action");
+  action.classList.remove("btn-style");
+  //   5
+  const fruits = document.querySelectorAll("#listeFruits li");
+  fruits.forEach((fruit) => {
+    fruit.style.color = "blue";
+  });
+  //   6
+  const carre = document.getElementById("conteneurCarre");
+  carre.style.backgroundColor = "gray";
+  //   7
+  const texteInfo = document.getElementById("texteInfo");
+  texteInfo.style.color = "";
+</script>
