@@ -1,0 +1,155 @@
+<!--            Formulaires :
+
+Les formulaires sont une partie essentielle des pages web pour recueillir des données auprès des utilisateurs. 
+
+Exemple simple de formulaire :
+<form id="formulaire">
+    <label for="nom">Nom :</label>
+    <input type="text" id="nom" name="nom" required>
+    <button type="submit">Envoyer</button>
+</form>
+
+Accéder aux éléments d'un formulaire
+    Les éléments d'un formulaire peuvent être sélectionnés comme n'importe quel autre élément DOM.
+        const formulaire = document.getElementById('formulaire');
+        const champNom = document.getElementById('nom');
+        console.log(formulaire); // Affiche l'objet formulaire
+        console.log(champNom);   // Affiche l'élément input
+
+Soumission d’un formulaire
+    Événement submit
+    L'événement submit se déclenche lorsque l'utilisateur soumet le formulaire. 
+    Par défaut, cela recharge la page, mais on peut empêcher ce comportement avec event.preventDefault()
+        Exemple :
+            formulaire.addEventListener('submit', (event) => {
+                    event.preventDefault(); // Empêche le rechargement de la page
+                console.log('Formulaire soumis !');
+            });
+
+Lire la valeur d’un champ
+    Utilisez la propriété .value pour obtenir la valeur d’un champ de formulaire.
+        console.log(champNom.value); // Affiche le contenu du champ "nom"
+
+Modifier la valeur d’un champ
+    champNom.value = "Jean Dupont"; // Définit une nouvelle valeur dans le champ
+
+Validation des formulaires
+    Vérifier si un champ est vide
+        if (champNom.value.trim() === "") {
+             console.log("Le champ Nom est vide.");
+            }
+Vérifier si un champ est valide
+    HTML5 propose des attributs comme required et des types spécifiques (email, number) pour simplifier la validation.
+    La méthode checkValidity() est utilisée pour vérifier si un élément de formulaire respecte toutes les contraintes de validation définies 
+    Elle retourne un booléen :
+        true : Si toutes les contraintes de validation sont respectées.
+        false : Si une ou plusieurs contraintes ne sont pas respectées.
+    Exemple : 
+       if (champNom.checkValidity()) { console.log("Le champ Nom est valide !") }
+ 
+Collecter et manipuler les données d'un formulaire
+L'objet FormData permet de collecter et manipuler les données d'un formulaire de ma-nière dynamique
+Création d'un Objet FormData :
+    const formulaire = document.getElementById('formExemple');
+    const formData = new FormData(formulaire);
+
+    Exemple :
+	HTML :
+        <form id="formExemple">
+                <input type="text" name="nom" value="Alice" />
+                <input type="email" name="email" value="alice@example.com" />
+                <button type="submit">Envoyer</button>
+        </form>
+	JavaScript :
+                const formulaire = document.getElementById('formExemple');
+                const formData = new FormData(formulaire); // Crée un objet FormData basé sur le formulaire
+                // Affiche toutes les paires clé-valeur
+                for (const [key, value] of formData.entries()) {
+                                console.log(`${key}: ${value}`);
+                }
+
+-->
+<!-- 1 Créez un formulaire avec un champ texte et un bouton. 
+ Lorsque l'utilisateur clique sur le bouton, affichez la valeur du champ texte dans la console -->
+<!-- 2 Créez un formulaire avec un champ texte. 
+ Si l'utilisateur clique sur le bouton sans rien écrire, affichez un message d'erreur sous le champ. -->
+<!-- 3 Créez un formulaire avec deux champs (nom et email) et un bouton. Lorsque le formulaire est soumis, affichez les valeurs des deux champs dans la console. -->
+<!-- 4 réez un formulaire avec plusieurs champs (nom, email, téléphone). Utilisez FormData pour afficher toutes les valeurs. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+  </head>
+  <body>
+    <h1>Form</h1>
+    <form id="form1">
+      <input type="text" id="champTexte" placeholder="Entrez votre nom" />
+      <button type="submit">Afficher</button>
+    </form>
+    <form id="form2">
+      <input type="text" id="champNom" placeholder="Entrez votre nom" />
+      <p id="erreur" style="color: red; display: none">Le champ est requis.</p>
+      <button type="submit">Envoyer</button>
+    </form>
+    <form id="form4">
+      <input type="text" id="nom" placeholder="Nom" />
+      <input type="email" id="email" placeholder="Email" />
+      <button type="submit">Envoyer</button>
+    </form>
+    <form id="form7">
+      <input type="text" name="nom" placeholder="Nom" />
+      <input type="email" name="email" placeholder="Email" />
+      <input type="tel" name="telephone" placeholder="Téléphone" />
+      <button type="submit">Envoyer</button>
+    </form>
+  </body>
+</html>
+<script>
+  // 1
+  const form1 = document.getElementById("form1");
+  const champTexte = document.getElementById("champTexte");
+
+  form1.addEventListener("submit", (event) => {
+    event.preventDefault();
+    console.log(`Nom : ${champTexte.value}`);
+  });
+  //   2
+  const form2 = document.getElementById("form2");
+  const champNom = document.getElementById("champNom");
+  const erreur = document.getElementById("erreur");
+
+  form2.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    if (champNom.value.trim() === "") {
+      erreur.style.display = "block";
+    } else {
+      erreur.style.display = "none";
+      console.log(`Nom : ${champNom.value}`);
+    }
+  });
+  //   3
+  const form4 = document.getElementById("form4");
+  const nom = document.getElementById("nom");
+  const email = document.getElementById("email");
+
+  form4.addEventListener("submit", (event) => {
+    event.preventDefault();
+    console.log(`Nom : ${nom.value}`);
+    console.log(`Email : ${email.value}`);
+  });
+  //   4
+  const form7 = document.getElementById("form7");
+
+  form7.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const formData = new FormData(form7);
+    console.log(formData.entries());
+
+    for (const [key, value] of formData.entries()) {
+      console.log(`${key}: ${value}`);
+    }
+  });
+</script>

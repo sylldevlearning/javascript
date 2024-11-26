@@ -1,0 +1,97 @@
+<!--         setTimeout
+
+La méthode setTimeout() permet d'exécuter une fonction ou un morceau de code après un délai spécifié en millisecondes. 
+Syntaxe : 	setTimeout(functionRef, delay, param1, param2, ...);
+		functionRef : La fonction à exécuter après le délai.
+        delay : Le délai en millisecondes avant l'exécution de la fonction.
+        param1, param2, ... : (Optionnel) Paramètres à passer à la fonction lors de son exécution.
+
+Exemple de base :
+	function saluer() {
+   		 console.log("Bonjour !");
+    }
+    setTimeout(saluer, 2000); // Affiche "Bonjour !" après 2 secondes
+
+Passer des paramètres à la fonction :
+		function saluer(nom) {
+    			console.log(`Bonjour, ${nom} !`);
+        }
+        setTimeout(saluer, 2000, "Alice"); // Affiche "Bonjour, Alice !" après 2 se-condes
+
+Annuler un setTimeout
+    La méthode setTimeout retourne un identifiant unique que vous pouvez utiliser pour annuler l'exécution planifiée en appelant clearTimeout
+    const identifiant = setTimeout(function() {
+        console.log("Ce message ne sera pas affiché.");
+    }, 5000);
+    clearTimeout(identifiant); // Annule l'exécution de la fonction
+Dans cet exemple, la fonction ne sera jamais exécutée car clearTimeout est appelé avant la fin du délai.
+ 
+-->
+<!-- 1 Affiche "Bonjour, monde !" dans la console après 2 secondes. -->
+<!-- 2  Ajoute un paragraphe avec le texte "Chargement terminé" après 3 secondes. -->
+<!-- 3 
+  Crée une fonction qui affiche un message "Bonjour, [Nom] !" avec un délai de 2 secondes. 
+  Passe "Alice" comme paramètre. 
+  -->
+<!-- 4 Planifie un message pour s'afficher après 5 secondes, mais annule l'affichage avant qu'il ne se produise. -->
+<!-- 5 Crée une fonction qui affiche un décompte de 5 à 0 dans la console avec une seconde d’écart. -->
+<!-- 6 Crée un cercle <div> qui change de position (de gauche à droite) après 3 secondes. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>setTimeout</title>
+  </head>
+  <body>
+    <h1>setTimeout</h1>
+    <div id="conteneur"></div>
+    <div
+      id="cercle"
+      style="
+        width: 50px;
+        height: 50px;
+        background: red;
+        position: absolute;
+        top: 100px;
+        left: 0;
+      "
+    ></div>
+  </body>
+</html>
+<script>
+  // 1
+  setTimeout(() => {
+    console.log("Bonjour, monde !");
+  }, 2000);
+  //   2
+  setTimeout(() => {
+    const paragraphe = document.createElement("p");
+    paragraphe.textContent = "Chargement terminé";
+    document.getElementById("conteneur").append(paragraphe);
+  }, 3000);
+  // 3
+  function saluer(nom) {
+    console.log(`Bonjour, ${nom} !`);
+  }
+  setTimeout(saluer, 2000, "Alice");
+  //   4
+  const id = setTimeout(() => {
+    console.log("Ce message ne sera pas affiché.");
+  }, 5000);
+  //   console.log(id);
+  clearTimeout(id); // Annule le message
+  // 5
+  function decompte(n) {
+    if (n >= 0) {
+      console.log(n);
+      setTimeout(() => decompte(n - 1), 1000);
+    }
+  }
+  decompte(5);
+  //   6
+  setTimeout(() => {
+    const cercle = document.getElementById("cercle");
+    cercle.style.left = "300px";
+  }, 3000);
+</script>

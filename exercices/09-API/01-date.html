@@ -1,0 +1,65 @@
+<!--        manipuler les dates et les heures
+
+JavaScript fournit l'objet Date pour manipuler les dates et les heures.
+Obtenir l'année, le mois, le jour 
+
+    const date = new Date();
+    console.log(date.getFullYear()); // Ex: 2024
+    console.log(date.getMonth());    // Ex: 10 (Novembre, car les mois commencent à 0)
+    console.log(date.getDate());     // Ex: 20 (jour du mois)
+
+new Date()	    Crée une date actuelle ou spécifique.
+getFullYear()	Obtient l'année.	
+getMonth()	    Obtient le mois (0-11).	date.getMonth()
+getDate()	    Obtient le jour du mois (1-31).	date.getDate()
+getDay()	    Obtient le jour de la semaine (0-6).	date.getDay()
+getHours()	    Obtient l'heure (0-23).	date.getHours()
+toLocaleDateString()	Formate la date selon la localisation.	date.toLocaleDateString()
+setFullYear()	Définit une nouvelle année.	date.setFullYear(2025)
+setMonth()	    Définit un nouveau mois.	date.setMonth(11)
+setDate()	    Définit un nouveau jour du mois.	date.setDate(15)
+Date.now()	    Renvoie le timestamp actuel en millisecondes.	Date.now()
+ 
+-->
+<!-- 1  Affiche la date actuelle au format jj/mm/aaaa. -->
+<!-- 2 Affiche l'heure actuelle au format hh:mm:ss -->
+<!-- 3 Affiche "Aujourd'hui, c'est [jour]" en utilisant les noms des jours (lundi, mardi...). -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  // 1
+  //   const date = new Date();
+  //   const jour = date.getDate();
+  //   const mois = date.getMonth() + 1; // Les mois commencent à 0
+  //   const annee = date.getFullYear();
+  //   console.log(`${jour}/${mois}/${annee}`);
+  //   2
+  const maintenant = new Date();
+  const heures = maintenant.getHours();
+  const minutes = maintenant.getMinutes();
+  const secondes = maintenant.getSeconds();
+
+  console.log(`${heures}:${minutes}:${secondes}`);
+  // 3
+  const jours = [
+    "Dimanche",
+    "Lundi",
+    "Mardi",
+    "Mercredi",
+    "Jeudi",
+    "Vendredi",
+    "Samedi",
+  ];
+  const date = new Date();
+  const jour = jours[date.getDay()];
+
+  console.log(`Aujourd'hui, c'est ${jour}`);
+</script>

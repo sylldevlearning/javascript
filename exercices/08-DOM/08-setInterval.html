@@ -1,0 +1,88 @@
+<!-- 
+setInterval
+La méthode setInterval() permet d'exécuter une fonction ou un morceau de code à intervalles réguliers spécifiés (en millisecondes). 
+Contrairement à setTimeout qui s'exécute une seule fois après un délai, setInterval continue à s'exécuter jusqu'à ce qu'il soit annulé.
+
+Syntaxe :  const intervalID = setInterval(function, delay, param1, param2, ...);
+        function : La fonction ou le code à exécuter.
+        delay : Le délai en millisecondes entre chaque exécution.
+        param1, param2, ... (optionnel) : Les paramètres à passer à la fonction.
+        intervalID : Un identifiant unique pour l'intervalle, utilisé pour l'annuler plus tard avec clearInterval.
+
+Exemple de base : Afficher un message toutes les 2 secondes
+		setInterval( () => {console.log("Bonjour !") }, 2000);
+
+Passer des paramètres à la fonction :
+		function afficherMessage(message) {   console.log(message) }
+        setInterval(afficherMessage, 1000, "Message récurrent"); 
+
+Annuler un setInterval
+Pour arrêter un intervalle, utilisez clearInterval avec l'identifiant retourné par setInterval.
+ 
+-->
+<!-- 1 Affiche "Bonjour !" dans la console toutes les 2 secondes -->
+<!-- 2 Déplace un carré de 10 pixels vers la droite toutes les 100ms. -->
+<!-- 3 Crée un décompte de 10 à 0 qui s'affiche dans la console. Arrête le décompte à 0. -->
+<!-- 4 Crée un carré qui clignote toutes les 500ms et disparaît complètement après 5 secondes. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div
+      id="carre"
+      style="
+        width: 50px;
+        height: 50px;
+        background: red;
+        position: absolute;
+        left: 0;
+      "
+    ></div>
+    <div
+      id="clignotant"
+      style="width: 100px; height: 100px; background: orange"
+    ></div>
+  </body>
+</html>
+<script>
+  // 1
+  //   setInterval(() => {
+  //     console.log("Bonjour !");
+  //   }, 2000);
+
+  // 2
+  //   const carre = document.getElementById("carre");
+  //   let position = 0;
+  //   setInterval(() => {
+  //     position += 10;
+  //     carre.style.left = position + "px";
+  //   }, 100);
+
+  //   3
+  //   let compteur = 10;
+  //   const intervalID = setInterval(() => {
+  //     console.log(compteur);
+  //     compteur--;
+  //     if (compteur < 0) {
+  //       clearInterval(intervalID);
+  //       console.log("Décompte terminé !");
+  //     }
+  //   }, 1000);
+
+  //   4
+  //   const clignotant = document.getElementById("clignotant");
+  //   let visible = true;
+  //   const intervalID = setInterval(() => {
+  //     clignotant.style.display = visible ? "none" : "block";
+  //     visible = !visible;
+  //   }, 500);
+
+  //   setTimeout(() => {
+  //     clearInterval(intervalID);
+  //     clignotant.style.display = "none";
+  //   }, 5000);
+</script>
