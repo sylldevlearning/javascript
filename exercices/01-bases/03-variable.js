@@ -26,9 +26,9 @@ console.log(nom);
 // ------------------------------------
 
 /*2 
-var nom = "TonPrénom";
-nom = "TonNomDeFamille";
-console.log("Mon nom est maintenant : " + nom);
+ Déclare une variable nom avec let et assigne-lui ton age. 
+Ensuite, modifie la valeur 
+et affiche la dans la console.
 
 */
 let age = 20;
@@ -45,9 +45,8 @@ const PI = 3.14159;
 console.log("La valeur de PI est : " + PI);
 // PI = 3.14; // Ceci provoquera une erreur
 
-/*
-
-Déclare les variables suivantes avec des valeurs appropriées en une seule ligne: 
+/* 3
+Déclare les variables (let) suivantes avec des valeurs appropriées en une seule ligne: 
     prenom (un prénom en texte), 
     monAge (un âge en nombre), 
     estInscrit (une valeur booléenne true ou false pour indiquer si la personne est inscrite) 

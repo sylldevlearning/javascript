@@ -38,41 +38,46 @@ Voici les principales opérations :
 Ces opérations mathématiques permettent d’effectuer des calculs et sont essentielles pour manipuler des valeurs numériques dans le code.
  */
 
-/*
+/* 1
 
 Addition (+)
 Addition de nombres simples :
-    Déclare deux variables avec des valeurs numériques, additionne-les, et affiche le résultat.
+Déclare deux variables avec des valeurs numériques, additionne-les, et affiche le résultat.
 
-Addition de chaîne et nombre :
-    Déclare une variable contenant un nombre et une autre contenant une chaîne de caractères. Additionne-les et observe le résultat .
 */
 
-/*
+/* 2
+Addition de chaîne et nombre :
+ Déclare une variable contenant un nombre et une autre contenant une chaîne de caractères. Additionne-les et observe le résultat .
+*/
+
+/*3
 Soustraction (-)
 Soustraction simple :
     Déclare deux variables avec des valeurs numériques, soustrais-les, et affiche le résultat.
 
+4
 Soustraction avec une chaîne vide :
     Soustrais une chaîne vide "" d'un nombre, et observe le résultat.
 Contrairement à l'addition, la soustraction avec des chaînes vides convertit la chaîne en Number, donc "10" - "" donne 10 et non une string.
 */
 // console.log(1 + ("20" - 0))
 
-/* 
+/* 5
 Multiplication (*)
     Multiplie deux nombres et affiche le résultat.
     Multiplie une chaîne numérique comme "5" par un nombre.
     Multiplie une chaîne numérique comme "5ok" par un nombre.
 */
 
-/* 
+/* 6
 Division (/)
 Divise deux nombres et affiche le résultat.
 Divise un nombre par 0 et observe le résultat. 
 Divise 0 par un nombre non nul pour observer le résultat.
 */
-/* 
+
+/* 7
 Modulo (%)
 
 --------
@@ -85,7 +90,7 @@ console.log(nombre % 2); // Affiche 0 pour un nombre pair
 Pour un nombre impair, l'opération nombre % 2 renverra 1, car il reste 1 lorsqu'on divise un nombre impair par 2.
 -----
 
-Utilise le modulo avec un nombre négatif pour voir comment JavaScript gère le signe du résultat.
+8 Utilise le modulo avec un nombre négatif pour voir comment JavaScript gère le signe du résultat.
 let negatif = -7;
 console.log(negatif % 3); // Affiche -1
 
@@ -96,7 +101,7 @@ console.log(negatif % 3); // Affiche -1
 Le signe du résultat dépend du signe du premier opérande.
 le modulo avec 0 est indéfini et renvoie NaN. 
 */
-/* 
+/* 9
 Exponentiation (**)
 Calcule une puissance comme 5 ** 2 et affiche le résultat.
 Observe le résultat d’une valeur élevée à 0.
