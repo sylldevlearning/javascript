@@ -16,16 +16,18 @@ for (let i = 0; i < 5; i++) {
 Utilise une boucle for pour afficher chaque nombre de 1 à 10 dans la console.
 Objectif : Comprendre la structure de base de la boucle for avec un compteur.
 */
-for (let i = 1; i <= 10; i++) {
-    console.log(i); // Affiche les nombres de 1 à 10
-}
+// for (let i = 1; i <= 10; i++) {
+//     console.log(i); // Affiche les nombres de 1 à 10
+// }
 
 /* 2)
 Demande à l'utilisateur de saisir un nombre avec prompt.
 Utilise une boucle for pour afficher la table de multiplication de ce nombre (par exemple, pour un nombre 5, affiche 5 x 1 = 5, 5 x 2 = 10, etc., jusqu'à 5 x 10 = 50).
 */
-let nombre = parseInt(prompt("Entrez un nombre pour afficher sa table de multiplication :"), 10);
+let nombre = parseInt(prompt("Entrez un nombre pour afficher sa table de multiplication :"));
 for (let i = 1; i <= 10; i++) {
+
+    console.log(nombre + ""); // Affiche la table de multiplication du nombre
     console.log(`${nombre} x ${i} = ${nombre * i}`); // Affiche la table de multiplication du nombre
 }
 

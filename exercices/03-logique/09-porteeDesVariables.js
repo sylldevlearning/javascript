@@ -40,8 +40,8 @@ if (true) {
     var variableVar = "Je suis avec var";
     let variableLet = "Je suis avec let";
 }
-console.log(variableVar); // Affiche "Je suis avec var"
-console.log(variableLet); // Erreur : "variableLet" n'est pas défini en dehors du bloc
+console.log(variableVar); //
+console.log(variableLet); //
 
 La principale différence entre let et const est que const crée une variable qui ne peut pas être réassignée, tandis que let permet de réassigner la variable.
 Voici les différences clés :
@@ -61,7 +61,7 @@ Voici les différences clés :
 */
 
 /*
-Déclare une variable messageGlobal dans la portée globale avec la valeur "Je suis global".
+Déclare une variable (let) messageGlobal dans la portée globale avec la valeur "Je suis global".
 Crée une fonction afficherMessage qui déclare une variable messageLocal avec la valeur "Je suis local".
 Dans cette fonction, affiche messageGlobal et messageLocal avec console.log.
 En dehors de la fonction, affiche messageGlobal et messageLocal avec console.log.
@@ -77,24 +77,21 @@ En dehors de la fonction, affiche messageGlobal et messageLocal avec console.log
 // afficherMessage();
 
 // console.log(messageGlobal); // Affiche "Je suis global"
-// try {
+
+
 //     console.log(messageLocal); // Erreur : messageLocal n'est pas défini en dehors de la fonction
 
-// } catch (error) {
-//     console.log(" messageLocal n'est pas défini en dehors de la fonction")
-// }
 
 /*
 Crée un bloc if qui vérifie si true est vrai.
 Dans ce bloc, déclare une variable x avec let et donne-lui la valeur 10.
 Affiche x dans le bloc et ensuite en dehors du bloc.
 */
-// if (true) {
-//     let x = 10;
-//     console.log(x); // Affiche 10, car x est accessible dans le bloc
-// }
-
-// console.log(x); // Erreur : x n'est pas défini en dehors du bloc
+if (true) {
+    let x = 10;
+    console.log(x); // Affiche 10, car x est accessible dans le bloc
+}
+console.log(x); // Erreur : x n'est pas défini en dehors du bloc
 
 
 /*

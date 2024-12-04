@@ -16,9 +16,9 @@ mais il ne retourne pas les valeurs, seulement les clés ou indices.
 /* 1)
     Affiche les indices de chaque élément d’un tableau.
 
-*/
-const couleurs = ['rouge', 'vert', 'bleu'];
+    */
 
+const couleurs = ['rouge', 'vert', 'bleu'];
 for (const index in couleurs) {
     console.log(index);
 }

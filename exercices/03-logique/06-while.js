@@ -44,15 +44,14 @@ Demande à l’utilisateur de saisir des nombres à additionner (utilise prompt 
 Continue d’additionner les nombres tant que l’utilisateur ne saisit pas 0.
 Une fois 0 saisi, affiche le résultat total de l’addition.
 */
-let total = 0;
-let nombre;
+// let total = 0;
+// let nombre;
+// while (nombre !== 0) {
+//     nombre = parseInt(prompt("Entrez un nombre à additionner (0 pour arrêter) :"))
+//     total += nombre;
+// }
 
-do {
-    nombre = parseInt(prompt("Entrez un nombre à additionner (0 pour arrêter) :"), 10);
-    total += nombre;
-} while (nombre !== 0);
-
-console.log("Le total est : " + total);
+// console.log("Le total est : " + total);
 
 
 /* 4)
@@ -75,6 +74,7 @@ Continue de demander jusqu'à ce que l’utilisateur devine correctement le nomb
 Affiche le nombre de tentatives nécessaires.
 */
 let nombreAleatoire = Math.floor(Math.random() * 10) + 1;
+console.log(nombreAleatoire)
 let tentative;
 let leCompteur = 0;
 

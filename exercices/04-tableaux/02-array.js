@@ -12,7 +12,8 @@ Change le deuxième élément en 10 et affiche le tableau.
 */
 // let nombres = [1, 2, 3, 4];
 // nombres[1] = 10;
-// console.log(nombres); // Affiche [1, 10, 3, 4]
+// nombres[1] = 10;
+// Affiche [1, 10, 3, 4]
 
 /* 3)
 Crée un tableau vide. Ajoute trois éléments au début et deux à la fin en utilisant push et unshift, puis affiche le tableau.
@@ -49,10 +50,9 @@ Crée un tableau ["pomme", "banane", "poire"] et utilise une boucle for pour aff
 Doubler les nombres avec map
 Déclare un tableau [1, 2, 3, 4]. Utilise map pour créer un nouveau tableau contenant les doubles des nombres et affiche le résultat.
 */
-// let nombres = [1, 2, 3, 4];
-// let doubles = nombres.map((x) => x * 2);
-// console.log(doubles); // Affiche [2, 4, 6, 8]
-
+let nombres = [1, 2, 3, 4];
+let doubles = nombres.map((x) => x * 2);
+console.log(doubles); // Affiche [2, 4, 6, 8]
 /* 8)
 Voici un tableau imbriqué représentant une grille :
     let grille = [
