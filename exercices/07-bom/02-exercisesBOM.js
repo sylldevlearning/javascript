@@ -12,8 +12,8 @@ pour interagir avec le navigateur.*/
 Affichez la largeur et la hauteur de la fenêtre
 
 */
-// console.log("Largeur : " + window.innerWidth);
-// console.log("Hauteur : " + window.innerHeight);
+console.log("Largeur : " + window.innerWidth);
+console.log("Hauteur : " + window.innerHeight);
 
 /* 2)
 Rediriger l'utilisateur vers https://www.google.com
